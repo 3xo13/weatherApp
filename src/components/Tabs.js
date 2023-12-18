@@ -2,13 +2,13 @@
 import React from 'react'
 import CurrentWeather from '../screens/CurrentWeather'
 import UpComingWeather from '../screens/UpComingWeather'
-import City from '../screens/City'
+import Maps from '../screens/Maps'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator()
 
-const Tabs = ({ weather }) => {
+const Tabs = ({ weather, lat, lon }) => {
 	return (
 		<Tab.Navigator
 			screenOptions={{
@@ -56,18 +56,18 @@ const Tabs = ({ weather }) => {
 				{() => <UpComingWeather weatherData={weather.list} />}
 			</Tab.Screen>
 			<Tab.Screen
-				name={'City'}
+				name={'Maps'}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<Feather
-							name={'home'}
+							name={'map'}
 							size={25}
 							color={focused ? 'tomato' : 'black'}
 						/>
 					)
 				}}
 			>
-				{() => <City weatherData={weather.city} />}
+				{() => <Maps weatherData={weather.city} lat={lat} lon={lon} />}
 			</Tab.Screen>
 		</Tab.Navigator>
 	)

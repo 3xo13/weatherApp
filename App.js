@@ -8,12 +8,12 @@ import { useGetWeather } from './src/hooks/useGetWeather'
 import ErrorItem from './src/components/ErrorItem'
 
 const App = () => {
-	const [loading, error, weather] = useGetWeather()
+	const [loading, error, weather, lat, lon] = useGetWeather()
 
 	if (weather && weather.list && !loading) {
 		return (
 			<NavigationContainer>
-				<Tabs weather={weather} />
+				<Tabs weather={weather} lat={lat} lon={lon} />
 			</NavigationContainer>
 		)
 	}

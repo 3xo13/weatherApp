@@ -26,23 +26,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		gap: 5
 	},
-	bodyWrapper: {
-		flex: 1,
-		justifyContent: 'flex-end',
-		alignItems: 'flex-start'
-	},
-	description: {
-		fontSize: 25,
-		paddingLeft: 25,
-		textTransform: 'capitalize',
-		color: 'white'
-	},
-	message: {
-		fontSize: 15,
-		paddingLeft: 25,
-		marginBottom: 40,
-		color: 'white'
-	},
 	flex1: {
 		flex: 1
 	},
